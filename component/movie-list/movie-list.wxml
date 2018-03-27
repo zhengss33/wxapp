@@ -1,0 +1,10 @@
+<!--component/movie-list/movie-list.wxml-->
+<view class='movie-list'>
+  <movie-card 
+    wx:for="{{movies}}"
+    wx:key="{{item.id}}"
+    movie="{{item}}"
+    rating="{{rating}}"
+    class="movie-item"
+  ></movie-card>
+</view>

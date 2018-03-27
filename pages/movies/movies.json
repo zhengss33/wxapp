@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "scroll-card": "/component/scroll-card/scroll-card",
+    "movie-list": "/component/movie-list/movie-list",
+    "ranking-list": "/component/ranking-list/ranking-list"
+  }
+}

@@ -1,0 +1,8 @@
+/* component/scroll-card/scroll-card.wxss */
+@import '/template/title/title.wxss';
+
+.scroll-card {
+  padding: 0 20rpx;
+  margin-bottom: 20rpx;
+  background: #fff;
+}

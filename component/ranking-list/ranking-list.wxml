@@ -1,0 +1,14 @@
+<!--component/ranking-list/ranking-list.wxml-->
+<import src="/template/title/title.wxml" />
+<import src="/template/movie-item/movie-item.wxml" />
+
+  <view class='ranking-container'>
+    <template is="title" data="{{title: rankingList[current].category}}" />
+    <swiper next-margin="70rpx" style='height: 550rpx' bindchange="swiperHandler">
+       <swiper-item wx:for="{{rankingList}}"  wx:key="{{index}}">
+        <view class="ranking">
+          <template is="movie-item" wx:for="{{item.movies}}" wx:for-item="ranking" wx:key="{{index}}" data="{{...ranking, order: index+1}}"/> 
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
