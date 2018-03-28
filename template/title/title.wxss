@@ -1,4 +1,12 @@
 .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   font-size: 16px;
   padding: 15rpx 0; 
+}
+
+.more {
+  font-size: 12px;
+  color: #666;
 }

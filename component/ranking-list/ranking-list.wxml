@@ -3,12 +3,29 @@
 <import src="/template/movie-item/movie-item.wxml" />
 
   <view class='ranking-container'>
-    <template is="title" data="{{title: rankingList[current].category}}" />
-    <swiper next-margin="70rpx" style='height: 550rpx' bindchange="swiperHandler">
-       <swiper-item wx:for="{{rankingList}}"  wx:key="{{index}}">
+    <template is="title" data="{{title: rankingList[current].title}}" />
+    <swiper
+      next-margin="70rpx" 
+      style='height: 750rpx' 
+      bindchange="swiperHandler"
+    >
+      <swiper-item
+        wx:for="{{rankingList}}" 
+        wx:for-item="rankings"
+        wx:key="{{index}}"
+      >
         <view class="ranking">
-          <template is="movie-item" wx:for="{{item.movies}}" wx:for-item="ranking" wx:key="{{index}}" data="{{...ranking, order: index+1}}"/> 
+          <template 
+            wx:for="{{rankings.movies}}"  
+            wx:for-item="ranking"
+            wx:for-index="idx"
+            wx:key="{{ranking.id}}"
+            wx:if="{{idx < count}}"
+            is="movie-item" 
+            data="{{...ranking, order: idx+1}}"
+          />
         </view>
+        <view class='more' catchtap='onMoreTap' data-title="{{rankings.title}}">全部</view>
       </swiper-item>
     </swiper>
   </view>

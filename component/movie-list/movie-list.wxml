@@ -4,7 +4,7 @@
     wx:for="{{movies}}"
     wx:key="{{item.id}}"
     movie="{{item}}"
-    rating="{{rating}}"
+    isRating="{{isRating}}"
     class="movie-item"
   ></movie-card>
 </view>

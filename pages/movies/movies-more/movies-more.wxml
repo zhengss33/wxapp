@@ -1,0 +1,10 @@
+<!--pages/movies/movies-more/movies-more.wxml-->
+
+<view class='movies-more'>
+  <movie-card 
+    class="movie-card" 
+    wx:for="{{data.movies}}" 
+    wx:key="{{item.id}}"
+    movie="{{item}}"
+    ></movie-card>
+</view>

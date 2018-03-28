@@ -5,7 +5,7 @@
     <image src="{{movie.image}}"></image>
   </view>
   <text class='movie-title'>{{ellipsisTitle}}</text>
-  <block wx:if="{{rating}}">
+  <block wx:if="{{isRating}}">
     <template is="stars" data="{{stars: movie.stars, average: movie.average}}"/>
   </block>
 </view>

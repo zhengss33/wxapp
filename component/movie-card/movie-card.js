@@ -4,7 +4,7 @@ Component({
       type: Object,
       value: {},
     },
-    rating: {
+    isRating: {
       type: Boolean,
       value: true,
     },

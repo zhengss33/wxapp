@@ -1,3 +1,8 @@
 <template name="title">
-  <view class='title'>{{title}}</view>
+  <view class='title'>
+    <text>{{title}}</text>
+    <navigator class='more' wx:if="{{url}}" url="{{url}}">
+      更多 >
+    </navigator>
+  </view>
 </template>

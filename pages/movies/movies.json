@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "电影",
   "usingComponents": {
     "scroll-card": "/component/scroll-card/scroll-card",
     "movie-list": "/component/movie-list/movie-list",

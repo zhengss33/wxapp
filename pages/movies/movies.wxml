@@ -1,12 +1,12 @@
 <!--pages/movies/movies.wxml-->
 <view>
-  <scroll-card title="{{inTheaters.category}}">
-    <movie-list movies="{{inTheaters.movies}}"></movie-list>
+  <scroll-card title="正在热映" url="../movies/movies-more/movies-more?category=正在热映">
+    <movie-list movies="{{in_theaters.movies}}"></movie-list>
   </scroll-card>
 
-  <scroll-card title="{{comingSoon.category}}">
-    <movie-list movies="{{comingSoon.movies}}" rating="{{false}}"></movie-list>
+  <scroll-card title="即将上映" url="../movies/movies-more/movies-more?category=即将上映">
+    <movie-list movies="{{coming_soon.movies}}" isRating="{{false}}"></movie-list>
   </scroll-card>
 
-  <ranking-list rankingList="{{[weekly, newMovies, top]}}"></ranking-list>  
+  <ranking-list rankingList="{{[weekly, new_movies, top250]}}"></ranking-list>
 </view>

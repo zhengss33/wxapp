@@ -1,68 +1,66 @@
 // pages/movies/movies.js
 const app = getApp();
-const utils = require('../../js/utils.js');
+const request = require('../../js/request.js');
+const config = require('../../js/config.js');
+const { IN_THEATERS_URL, COMING_URL, NEW_MOVIE_URL, TOP250_URL, WEEKLY_URL} = config;
 
 Page({
 
   /**
    * 页面的初始数据
    */
-  data: {
-    arr: [1,2,3],
-  },
+  data: {},
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let baseUrl = app.globalData.baseUrl;
-    let in_theatersUrl = `${baseUrl}/v2/movie/in_theaters`;
-    let comingUrl = `${baseUrl}/v2/movie/coming_soon`;
-    let topUrl = `${baseUrl}/v2/movie/top250`;
-    let weeklyUrl = `${baseUrl}/v2/movie/weekly`;
-    let newMoviesUrl = `${baseUrl}/v2/movie/new_movies`;
-
-    this.getMoviesData(in_theatersUrl, 'inTheaters', 10);
-    this.getMoviesData(comingUrl, 'comingSoon', 10);
-    this.getMoviesData(topUrl, 'top', 5);
-    this.getMoviesData(weeklyUrl, 'weekly', 5);
-    this.getMoviesData(newMoviesUrl, 'newMovies', 5);
+    this.getMoviesData();
   },
 
-  getMoviesData(url, category, count) {
-    wx.request({
-      url: url,
-      header: {
-        "Content-Type": "json",
-      },
-      success: (res) => {
-        console.log(res);
-        this.formatMovieData(res.data, category, count);
-      },
-      fail: (err) => {
-        console.log(err);
-      }
+  getMoviesData() {
+    // 正在热映
+    request.getMoviesData({
+      url:IN_THEATERS_URL, 
+      category: 'in_theaters',
+      count: 10,
+    }).then((res) => {
+      this.setData(res);
     });
-  },
-
-  formatMovieData(data, category, count) {
-    let subjects = data.subjects.slice(0, count);
-    let movies = [];
-    let movieData = {};
-    subjects.forEach((v, i) => {
-      let movie = category === 'weekly' ? v.subject : v;
-      movies.push({
-        id: movie.id,
-        image: movie.images.small,
-        title: movie.title,
-        average: movie.rating.average,
-        stars: utils.convertToStarsArr(movie.rating.stars),
-      });
+    
+    // 即将上映
+    request.getMoviesData({
+      url: COMING_URL,
+      category: 'coming_soon',
+      count: 10,
+    }).then((res) => {
+      this.setData(res);
     });
-    movieData[category] = {
-      category: data.title.substr(2),
-      movies: movies,
-    };
-    this.setData(movieData);
-  },
-})
+
+    // 新片榜
+    request.getMoviesData({
+      url: NEW_MOVIE_URL,
+      category: 'new_movies',
+    }).then((res) => {
+      this.setData(res);
+    });
+
+    // top250
+    request.getMoviesData({
+      url: TOP250_URL,
+      category: 'top250',
+      count: 5,
+      }).then((res) => {
+      this.setData(res);
+    });
+
+    // 周榜
+    request.getMoviesData({
+      url: WEEKLY_URL,
+      category: 'weekly',
+      count: 5,
+    }).then((res) => {
+      this.setData(res);
+    });
+  }
+});
