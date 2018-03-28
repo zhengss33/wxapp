@@ -21,7 +21,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    boxs: 3,
+    start: 0,
+    count: 20,
+    total: 0,
   },
 
   /**
@@ -29,10 +32,16 @@ Page({
    */
   onLoad: function (options) {
     let category = options.category;
-    this.getMoviesData(category);
+    this.setData({ category });
+    this.getMoviesData();
   },
 
-  getMoviesData(category) {
+  onReachBottom: function() {
+
+  },
+
+  getMoviesData() {
+    let { category, start, count } = this.data;
     let url = '';
 
     switch (category) {
@@ -62,7 +71,31 @@ Page({
       title: category,
     });
     
-    request.getMoviesData(url, 'data').then((res) => {
+    request.getMoviesData({
+      url,
+      category: 'subjects',
+      start,
+      count,
+    }).then((res) => {
+      let movies = res.subjects.movies;
+      let moviesSouce = this.data.subjects ? this.data.subjects.movies : [];
+
+      if (moviesSouce.length > 0) {
+        movies = movies.contact(moviesSouce);
+      }
+
+      let count = movies.length;
+      let boxs = this.data.boxs;
+      let fillCount = boxs - (count % boxs);
+      let fillBox = Array.from({length: fillCount});
+
+      movies.push(...fillBox);
+
+      if (!this.data.total) {
+        this.setData({
+          total: res.subjects.total,
+        });
+      }
       this.setData(res);
     });
   }

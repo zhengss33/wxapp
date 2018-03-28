@@ -17,11 +17,13 @@ Component({
   },
   methods: {
     cutTitle() {
-      let title = this.properties.movie.title;
-      let ellipsis = title.length > 6 ? this.properties.movie.title.substr(0, 6) + '...' : title;
-      this.setData({
-        ellipsisTitle: ellipsis,
-      });
+      let title = this.properties.movie && this.properties.movie.title;
+      if (title) {
+        let ellipsis = title.length > 6 ? this.properties.movie.title.substr(0, 6) + '...' : title;
+        this.setData({
+          ellipsisTitle: ellipsis,
+        });
+      }
     }
   }
 })

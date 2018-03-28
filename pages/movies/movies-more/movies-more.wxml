@@ -3,7 +3,7 @@
 <view class='movies-more'>
   <movie-card 
     class="movie-card" 
-    wx:for="{{data.movies}}" 
+    wx:for="{{subjects.movies}}" 
     wx:key="{{item.id}}"
     movie="{{item}}"
     ></movie-card>

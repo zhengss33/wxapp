@@ -6,11 +6,6 @@
   padding: 20rpx;
 }
 
-.movies-more::after {
-  content: '';
-  width: 220rpx;
-}
-
 .movie-card {
   margin-bottom: 30rpx;
 }
