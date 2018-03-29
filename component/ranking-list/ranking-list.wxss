@@ -2,10 +2,6 @@
 @import '/template/title/title.wxss';
 @import '/template/movie-item/movie-item.wxss';
 
-.ranking-container {
-  padding: 20rpx;
-}
-
 .ranking{
   padding-right: 30rpx
 }

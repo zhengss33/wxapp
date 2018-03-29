@@ -1,6 +1,6 @@
 @import '/template/stars/stars.wxss';
 .movie-card {
-  width: 200rpx;
+  min-width: 200rpx;
 }
 
 .movie-image {

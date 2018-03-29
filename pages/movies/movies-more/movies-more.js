@@ -2,6 +2,7 @@
 const app = getApp();
 const request = require('../../../js/request.js');
 const config = require('../../../js/config.js');
+const boxs = 3;
 const { 
   IN_THEATERS, 
   IN_THEATERS_URL,
@@ -21,10 +22,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    boxs: 3,
+    fillBoxs: [],
     start: 0,
     count: 20,
     total: 0,
+    requestUrl: '',
+    isEmpty: false,
   },
 
   /**
@@ -32,15 +35,62 @@ Page({
    */
   onLoad: function (options) {
     let category = options.category;
+
+    wx.setNavigationBarTitle({
+      title: category,
+    });
+
+    wx.showLoading({
+      title: '正在加载...',
+    });
+
     this.setData({ category });
+    this.setRequestUrl();
     this.getMoviesData();
   },
 
   onReachBottom: function() {
-
+    if (!this.data.isEmpty) {
+      setTimeout(() => {
+        this.getMoviesData();
+      }, 1000);
+    }
   },
 
   getMoviesData() {
+    let { requestUrl, start, count } = this.data;
+
+    request.getMoviesData({
+      url: requestUrl,
+      start,
+      count,
+    }).then((res) => {
+      let moviesSouce = this.data.subjects ? this.data.subjects.movies : [];
+      if (moviesSouce.length > 0) {
+        let movies = res.movies;
+        res.movies = moviesSouce.concat(movies);
+      }
+
+      this.setData({
+        subjects: res,
+        start: start + count,
+        total: res.total,
+      });
+
+      this.checkIsEmpty();
+      this.getFillBoxs();
+      wx.hideLoading();
+    });
+  },
+
+  checkIsEmpty() {
+    let { start, total } = this.data;
+    this.setData({
+      isEmpty: start >= total,
+    });
+  },
+
+  setRequestUrl() {
     let { category, start, count } = this.data;
     let url = '';
 
@@ -48,7 +98,7 @@ Page({
       case IN_THEATERS:
         url = IN_THEATERS_URL;
         break;
-      
+
       case COMING:
         url = COMING_URL;
         break;
@@ -64,39 +114,22 @@ Page({
       case NEW_MOVIE:
         url = NEW_MOVIE_URL;
         break;
-      
+
     }
-    
-    wx.setNavigationBarTitle({
-      title: category,
+    this.setData({
+      requestUrl: url,
     });
-    
-    request.getMoviesData({
-      url,
-      category: 'subjects',
-      start,
-      count,
-    }).then((res) => {
-      let movies = res.subjects.movies;
-      let moviesSouce = this.data.subjects ? this.data.subjects.movies : [];
+  },
 
-      if (moviesSouce.length > 0) {
-        movies = movies.contact(moviesSouce);
-      }
-
-      let count = movies.length;
-      let boxs = this.data.boxs;
-      let fillCount = boxs - (count % boxs);
-      let fillBox = Array.from({length: fillCount});
-
-      movies.push(...fillBox);
-
-      if (!this.data.total) {
-        this.setData({
-          total: res.subjects.total,
-        });
-      }
-      this.setData(res);
+  getFillBoxs() {
+    let len = this.data.subjects.movies.length;
+    let fillBoxs = [];
+    if (len % boxs > 0) {
+      let fillCount = boxs - (len % boxs);
+      fillBoxs = Array(fillCount).fill({});
+    }
+    this.setData({
+      fillBoxs,
     });
-  }
+  },
 })

@@ -25,7 +25,9 @@ Page({
       category: 'in_theaters',
       count: 10,
     }).then((res) => {
-      this.setData(res);
+      this.setData({
+        in_theaters: res,
+      });
     });
     
     // 即将上映
@@ -34,7 +36,9 @@ Page({
       category: 'coming_soon',
       count: 10,
     }).then((res) => {
-      this.setData(res);
+      this.setData({
+        coming_soon: res,
+      });
     });
 
     // 新片榜
@@ -42,7 +46,9 @@ Page({
       url: NEW_MOVIE_URL,
       category: 'new_movies',
     }).then((res) => {
-      this.setData(res);
+      this.setData({
+        new_movies: res,
+      });
     });
 
     // top250
@@ -51,7 +57,9 @@ Page({
       category: 'top250',
       count: 5,
       }).then((res) => {
-      this.setData(res);
+      this.setData({
+        top250: res,
+      });
     });
 
     // 周榜
@@ -60,7 +68,9 @@ Page({
       category: 'weekly',
       count: 5,
     }).then((res) => {
-      this.setData(res);
+      this.setData({
+        weekly: res,
+      });
     });
   }
 });

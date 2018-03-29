@@ -1,7 +1,7 @@
 <template name="title">
   <view class='title'>
     <text>{{title}}</text>
-    <navigator class='more' wx:if="{{url}}" url="{{url}}">
+    <navigator class='more'hover-class="none" wx:if="{{url}}" url="{{url}}">
       更多 >
     </navigator>
   </view>

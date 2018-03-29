@@ -15,7 +15,7 @@ const formatMovieData = function(data, category) {
       stars: utils.convertToStarsArr(movie.rating.stars),
     });
   });
-  movieData[category] = {
+  movieData = {
     category,
     title: data.title.substr(2),
     total: data.total,

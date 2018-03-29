@@ -7,7 +7,11 @@
   justify-content: space-between;
   padding: 200rpx 0;
   box-sizing: border-box;
-} 
+}
+
+.page {
+  padding: 0 20rpx;
+}
 
 text {
   font-family: MicroSoft Yahei;

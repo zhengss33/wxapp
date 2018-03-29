@@ -1,4 +1,5 @@
 Component({
+  externalClasses: ['card-class'],
   properties: {
     movie: {
       type: Object,

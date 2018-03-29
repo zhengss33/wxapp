@@ -1,8 +1,10 @@
 /* pages/movies/movies-more/movies-more.wxss */
+@import '/template/load-more/load-more-template.wxss';
+
 .movies-more {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 20rpx;
 }
 

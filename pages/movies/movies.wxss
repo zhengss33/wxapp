@@ -1,2 +1,13 @@
 /* pages/movies/movies.wxss */
 
+ .section {
+  margin-bottom: 30rpx;
+} 
+
+ .section::after{
+  content: '';
+  display: inline-block;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+} 
