@@ -1,12 +1,20 @@
 <!--pages/movies/movies.wxml-->
-<view class='movie-container page'>
-  <scroll-card class="section" title="正在热映" url="../movies/movies-more/movies-more?category=正在热映">
-    <movie-list movies="{{in_theaters.movies}}"></movie-list>
-  </scroll-card>
+<import src="/template/title/title.wxml" />
 
-  <scroll-card class="section" title="即将上映" url="../movies/movies-more/movies-more?category=即将上映">
-    <movie-list movies="{{coming_soon.movies}}" isRating="{{false}}"></movie-list>
-  </scroll-card>
+<view class="movie-container page">
+  <view class="section">
+    <template is="title" data="{{title: '正在热映', url: '/pages/movies/more/more?category=正在热映'}}"></template>
+    <scroll-view scroll-x>
+      <movie-list movies="{{in_theaters.movies}}" isRating="{{true}}"></movie-list>
+    </scroll-view>
+  </view>
 
+  <view class="section">
+    <template is="title" data="{{title: '即将上映', url: '/pages/movies/more/more?category=即将上映'}}"></template>
+    <scroll-view scroll-x>
+      <movie-list movies="{{coming_soon.movies}}" isRating="{{false}}"></movie-list>
+    </scroll-view>
+  </view>
+  
   <ranking-list class="section" rankingList="{{[weekly, new_movies, top250]}}"></ranking-list>
 </view>

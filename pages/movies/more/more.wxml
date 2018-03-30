@@ -1,8 +1,8 @@
 <!--pages/movies/movies-more/movies-more.wxml-->
 <import src="/template/load-more/load-more-template.wxml" />
 
-<view>
-  <view class='movies-more'>
+<view class="page">
+  <view class="movies-more">
     <movie-card 
       class="movie-card"
       wx:for="{{subjects.movies}}" 

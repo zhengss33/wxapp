@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: space-between;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 18px;
   padding: 15rpx 0; 
 }
 

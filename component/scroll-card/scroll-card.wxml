@@ -1,9 +1,0 @@
-<!--component/scroll-card/scroll-card.wxml-->
-<import src="/template/title/title.wxml" />
-
-<view class='scroll-card'>
-  <template is="title" data="{{title, url}}"></template>
-  <scroll-view scroll-x>
-    <slot></slot>
-  </scroll-view>
-</view>

@@ -1,6 +1,6 @@
 <template name="stars">
-  <view class='stars-container'>
+  <view class="stars-container">
     <image wx:for="{{stars}}" wx:key="{{index}}" class="rating-stars {{item? 'rating-stars-full' : 'rating-stars-gray'}}"></image> 
-    <text class='average'>{{average}}</text>
+    <text class="average">{{average}}</text>
   </view>
 </template>

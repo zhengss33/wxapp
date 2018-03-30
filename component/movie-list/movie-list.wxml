@@ -1,9 +1,13 @@
 <!--component/movie-list/movie-list.wxml-->
-<view class='movie-list'>
+<view class="movie-list">
   <movie-card 
     wx:for="{{movies}}"
     wx:key="{{item.id}}"
-    movie="{{item}}"
+    image="{{item.image}}"
+    title="{{item.title}}"
+    mid="{{item.id}}"
+    average="{{item.average}}"
+    stars="{{item.stars}}"
     isRating="{{isRating}}"
     class="movie-item"
   ></movie-card>

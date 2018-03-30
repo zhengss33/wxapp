@@ -1,11 +1,11 @@
 <import src="/template/stars/stars.wxml" />
 
 <template name="movie-item">
-  <view class='movie-card'>
-    <view class='order'>{{order}}</view>
-    <image class='poster' src="{{image}}"></image>
-    <view class='info'>
-      <text class='name'>{{title}}</text>
+  <view class="movie-card">
+    <view class="order">{{order}}</view>
+    <image class="poster" src="{{image}}"></image>
+    <view class="info">
+      <text class="name">{{title}}</text>
       <template is="stars" data="{{ average, stars }}"/>
     </view>
   </view>

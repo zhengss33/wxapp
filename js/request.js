@@ -1,6 +1,6 @@
 const utils = require('./utils.js');
 
-const formatMovieData = function(data, category) {
+const formatMoviesData = function(data, category) {
   let subjects = data.subjects;
   let movies = [];
   let movieData = {};
@@ -38,7 +38,7 @@ const getMoviesData = function({url, start=0, count=20, category}) {
         "Content-Type": "json",
       },
       success: (res) => {
-        let data = formatMovieData(res.data, category);
+        let data = formatMoviesData(res.data, category);
         resolve(data);
       },
       fail: (err) => {
@@ -50,5 +50,5 @@ const getMoviesData = function({url, start=0, count=20, category}) {
 
 module.exports = {
   getMoviesData,
-  formatMovieData,
+  formatMoviesData,
 };

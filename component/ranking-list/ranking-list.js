@@ -32,7 +32,7 @@ Component({
     onMoreTap(event) {
       let title = event.target.dataset.title;
       wx.navigateTo({
-        url: `../movies/movies-more/movies-more?category=${title}`,
+        url: `/pages/movies/more/more?category=${title}`,
      });
     },
   }

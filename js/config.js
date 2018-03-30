@@ -15,6 +15,10 @@ const WEEKLY = '电影本周口碑榜';
 const NEW_MOVIE_URL = `${MOVIES_BASE_URL}/v2/movie/new_movies`;
 const NEW_MOVIE = '电影新片榜';
 
+const SEARCH_URL = `${MOVIES_BASE_URL}/v2/movie/search`;
+
+const SUBJECT_URL = `${MOVIES_BASE_URL}/v2/movie/subject/`;
+
 module.exports = {
   MOVIES_BASE_URL,
   IN_THEATERS_URL,
@@ -27,4 +31,6 @@ module.exports = {
   WEEKLY,
   NEW_MOVIE_URL,
   NEW_MOVIE,
+  SEARCH_URL,
+  SUBJECT_URL,
 };

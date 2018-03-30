@@ -1,11 +1,12 @@
-<import src="/template/stars/stars.wxml"/> 
+<import src='/template/stars/stars.wxml'/> 
 
-<view class='movie-card card-class'>
-  <view class='movie-image'>
-    <image src="{{movie.image}}"></image>
+<view class="movie-card card-class" catchtap="onMovieTap" data-mid="{{mid}}">
+  <view class="movie-image">
+    <image src="{{image}}"></image>
   </view>
-  <text class='movie-title'>{{ellipsisTitle}}</text>
+  <view class="movie-title">{{ellipsisTitle}}</view>
   <block wx:if="{{isRating}}">
-    <template is="stars" data="{{stars: movie.stars, average: movie.average}}"/>
+    <template is="stars" data="{{stars, average}}" />
   </block>
+  <slot></slot>
 </view>

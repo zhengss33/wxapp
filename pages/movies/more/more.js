@@ -74,7 +74,7 @@ Page({
       this.setData({
         subjects: res,
         start: start + count,
-        total: res.total,
+        total: res.total || 0,
       });
 
       this.checkIsEmpty();

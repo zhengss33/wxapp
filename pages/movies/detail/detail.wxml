@@ -1,0 +1,38 @@
+<!--pages/movies/detail/detail.wxml-->
+ <view class="movie-detail">
+  <view class="movie-detail-hd" style="background-image: url({{data.images.small}})">
+     <image class='poster' src="{{data.images.small}}"></image>
+  </view>
+  <view class="movie-bd">
+    <view class="desc">
+      <view class="info">
+        <view class="title">{{data.title}}</view>
+        <view class="meta">
+          <view class="">
+            <text class="year">{{data.year}}</text>
+            <text class="countries">{{data.countries.join('/')}}</text>
+            <text class="genres">{{data.genres.join('/')}}</text>
+          </view>
+          <view class="original-title">原名: {{data.original_title}}</view>
+          <view class="pubdates">上映时间: {{data.mainland_pubdate}}(中国大陆)</view>
+          <view class="durations">片长: {{data.durations[0]}}</view>
+        </view>
+      </view>
+
+      <view class="rating">
+        豆瓣评分
+        <view class="average">{{data.rating.average}}</view>
+        <view class="rating-stars"></view>
+        <view class="ratings-count">{{data.ratings_count}}人</view>
+      </view>
+    </view>
+
+    <view class="summary">
+      <view class="tip">剧情简介</view>
+      <view class='content'>{{data.summary}}</view>
+    </view>
+
+    <view class='cats'>
+    </view>
+  </view>
+</view> 

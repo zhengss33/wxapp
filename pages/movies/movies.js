@@ -2,7 +2,7 @@
 const app = getApp();
 const request = require('../../js/request.js');
 const config = require('../../js/config.js');
-const { IN_THEATERS_URL, COMING_URL, NEW_MOVIE_URL, TOP250_URL, WEEKLY_URL} = config;
+const { IN_THEATERS_URL, COMING_URL, NEW_MOVIE_URL, TOP250_URL, WEEKLY_URL } = config;
 
 Page({
 
@@ -72,5 +72,5 @@ Page({
         weekly: res,
       });
     });
-  }
+  },
 });

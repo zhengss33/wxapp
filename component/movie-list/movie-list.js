@@ -8,10 +8,7 @@ Component({
       type: Array,
       value: [],
     },
-    rating: {
-      type: Boolean,
-      value: true,
-    },
+    isRating: Boolean,
   },
 
   /**
@@ -25,6 +22,5 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
   }
 })
