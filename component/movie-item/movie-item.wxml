@@ -1,0 +1,11 @@
+<!--component/movie-item/movie-item.wxml-->
+<import src="/template/stars/stars.wxml" />
+
+<view class="movie-card" data-mid="{{movie.id}}" catchtap="onTap">
+  <view class="order">{{order}}</view>
+  <image class="poster" src="{{movie.image}}"></image>
+  <view class="info">
+    <text class="name">{{movie.title}}</text>
+    <template wx-if="{{movie.stars}}" is="stars" data="{{ average: movie.average, stars: movie.stars }}"/>
+  </view>
+</view>

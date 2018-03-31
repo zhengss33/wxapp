@@ -35,11 +35,10 @@ Component({
       }
     },
     
-    onMovieTap(event) {
+    onTap(event) {
       let id = event.currentTarget.dataset.mid;
-      wx.navigateTo({
-        url: `/pages/movies/detail/detail?id=${id}`,
-      });
+
+      this.triggerEvent('MovieTap', { mid: id});
     },
   }
 })

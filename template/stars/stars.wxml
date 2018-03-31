@@ -1,6 +1,23 @@
+<wxs module="convert">
+var toStarsArr = function(stars) {
+  var num = stars.toString().substring(0,1);
+  var arr = [];
+  for(var i = 1; i <= 5; i++) {
+    if (i <= num) {
+      arr.push(1);
+    } else {
+      arr.push(0);
+    }
+  }
+  return arr;
+}
+
+module.exports.toStarsArr = toStarsArr;
+</wxs>
+
 <template name="stars">
   <view class="stars-container">
-    <image wx:for="{{stars}}" wx:key="{{index}}" class="rating-stars {{item? 'rating-stars-full' : 'rating-stars-gray'}}"></image> 
-    <text class="average">{{average}}</text>
+    <image wx:for="{{convert.toStarsArr(stars)}}" wx:key="{{index}}" class="rating-stars {{item? 'rating-stars-full' : 'rating-stars-gray'}}"></image> 
+    <text wx:if="{{average}}" class="average">{{average}}</text>
   </view>
 </template>

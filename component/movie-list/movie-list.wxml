@@ -9,6 +9,7 @@
     average="{{item.average}}"
     stars="{{item.stars}}"
     isRating="{{isRating}}"
+    catchMovieTap="onMovieTap"
     class="movie-item"
   ></movie-card>
 </view>

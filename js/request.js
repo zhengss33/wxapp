@@ -1,5 +1,3 @@
-const utils = require('./utils.js');
-
 const formatMoviesData = function(data, category) {
   let subjects = data.subjects;
   let movies = [];
@@ -12,7 +10,7 @@ const formatMoviesData = function(data, category) {
       image: movie.images && movie.images.small ,
       title: movie.title,
       average: movie.rating.average,
-      stars: utils.convertToStarsArr(movie.rating.stars),
+      stars: movie.rating.stars,
     });
   });
   movieData = {

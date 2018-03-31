@@ -1,0 +1,33 @@
+/* component/movie-item/movie-item.wxss */
+@import '/template/stars/stars.wxss';
+
+.movie-card {
+  height: 110rpx; 
+  margin-bottom: 30rpx;
+  display: flex;
+  align-items: flex-start;
+}
+
+.order {
+  width: 40rpx;
+  height: 100%;
+  font-size: 18px;
+}
+
+.poster {
+  display: block;
+  width: 80rpx;
+  height: 100rpx;
+  border-radius: 3px;
+}
+
+.info {
+  margin-left: 25rpx;
+  flex: 1;
+  height: 100%;
+  border-bottom: 1rpx solid #e7e7eb;
+}
+
+.name {
+  font-size: 14px;
+}

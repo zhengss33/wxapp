@@ -1,7 +1,7 @@
 // pages/movies/movies-more/movies-more.js
 const app = getApp();
-const request = require('../../../js/request.js');
-const config = require('../../../js/config.js');
+const request = require('../../js/request.js');
+const config = require('../../js/config.js');
 const boxs = 3;
 const { 
   IN_THEATERS, 
@@ -51,9 +51,7 @@ Page({
 
   onReachBottom: function() {
     if (!this.data.isEmpty) {
-      setTimeout(() => {
-        this.getMoviesData();
-      }, 1000);
+      this.getMoviesData();
     }
   },
 
@@ -132,4 +130,12 @@ Page({
       fillBoxs,
     });
   },
+
+  onMovieTap(event) {
+    let mid = event.detail.mid;
+    
+    wx.navigateTo({
+      url: `/pages/detail/detail?id=${mid}`,
+    });
+  }
 })

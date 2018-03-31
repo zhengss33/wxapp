@@ -22,5 +22,12 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    onMovieTap(event){
+      let mid = event.detail.mid;
+
+      wx.navigateTo({
+        url: `/pages/detail/detail?id=${mid}`,
+      });
+    }
   }
 })

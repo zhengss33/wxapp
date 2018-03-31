@@ -1,8 +1,9 @@
 {
   "pages":[
     "pages/movies/movies",
-    "pages/movies/more/more",
-    "pages/movies/detail/detail",
+    "pages/detail/detail",
+    "pages/more/more",
+    "pages/celebrity/celebrity",
     "pages/tv/tv",
     "pages/index/index",
     "pages/logs/logs"

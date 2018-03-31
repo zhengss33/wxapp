@@ -1,7 +1,7 @@
 <import src="/template/stars/stars.wxml" />
 
 <template name="movie-item">
-  <view class="movie-card">
+  <view class="movie-card" data-mid="id">
     <view class="order">{{order}}</view>
     <image class="poster" src="{{image}}"></image>
     <view class="info">

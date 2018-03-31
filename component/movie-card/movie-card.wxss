@@ -1,6 +1,9 @@
 @import '/template/stars/stars.wxss';
+
 .movie-card {
+  width: inherit;
   min-width: 200rpx;
+  overflow: hidden;
 }
 
 .movie-image {

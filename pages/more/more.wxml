@@ -7,7 +7,12 @@
       class="movie-card"
       wx:for="{{subjects.movies}}" 
       wx:key="{{item.id}}"
-      movie="{{item}}"
+      image="{{item.image}}"
+      title="{{item.title}}"
+      mid="{{item.id}}"
+      average="{{item.average}}"
+      stars="{{item.stars}}"
+      catchMovieTap="onMovieTap"
       ></movie-card>
     <movie-card 
       class="movie-card" 

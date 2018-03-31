@@ -1,6 +1,6 @@
 <import src='/template/stars/stars.wxml'/> 
 
-<view class="movie-card card-class" catchtap="onMovieTap" data-mid="{{mid}}">
+<view class="movie-card card-class" catchtap="onTap" data-mid="{{mid}}">
   <view class="movie-image">
     <image src="{{image}}"></image>
   </view>
