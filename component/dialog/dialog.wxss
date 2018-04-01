@@ -1,0 +1,27 @@
+/* component/dialog/dialog.wxss */
+@import "/template/modal/modal.wxss";
+
+.dialog-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+.dialog-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.dialog {
+  z-index: 3000;
+  background: #fff;
+}
+
+.fullscreen {
+  width: 100% !important;
+  height: 100%;
+}

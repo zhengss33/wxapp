@@ -1,0 +1,10 @@
+/* component/movie-list/movie-list.wxss */
+.card-list {
+  display: flex;
+  justify-content: space-between;
+  margin-left: -20rpx;
+}
+
+.card-item {
+  margin-left: 20rpx; 
+}

@@ -1,0 +1,15 @@
+/* pages/books/detail/detail.wxss */
+
+.book-detail {
+  background: #fafbfc;
+}
+
+.detail-content {
+  padding: 30rpx;
+}
+
+.tip {
+  color: #999;
+  font-size: 12px;
+  padding: 20rpx 0;
+}

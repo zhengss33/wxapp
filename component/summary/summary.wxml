@@ -1,0 +1,13 @@
+<!--component/summary/summary.wxml-->
+
+<view class="summary" >
+  <view class="tip">{{title}}</view>
+  <view class="content" catchtap="onSpread">
+    <view wx:if="{{isSpread}}">
+      {{content}}
+    </view>
+    <view class="spread" wx:else>
+      {{clipContent}}
+    </view>
+  </view>
+</view>

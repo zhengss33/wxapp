@@ -1,0 +1,12 @@
+<!--component/dialog/dialog.wxml-->
+<import src="/template/modal/modal.wxml" />
+
+<view class="dialog-wrapper {{center ? 'dialog-center': ''}}" wx:if="{{visible}}">
+  <view class="dialog {{fullscreen ? 'fullscreen' : ''}}" style="width: {{width}}">
+    <slot name="dialog-header"></slot>
+    <slot></slot>
+    <slot name="dialog-footer"></slot>
+    kkkk
+  </view>
+   <view class="modal"></view> 
+</view>

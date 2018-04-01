@@ -1,0 +1,23 @@
+<!--pages/movies/movies-more/movies-more.wxml-->
+<import src="/template/load-more/load-more-template.wxml" />
+
+<view class="page">
+  <view class="movies-more">
+    <card 
+      class="movie-card"
+      wx:for="{{subjects.movies}}" 
+      wx:key="{{item.id}}"
+      image="{{item.image}}"
+      title="{{item.title}}"
+      mid="{{item.id}}"
+      average="{{item.average}}"
+      catchMovieTap="onMovieTap"
+      ></card>
+    <card 
+      class="movie-card" 
+      wx:for="{{fillBoxs}}"
+      wx:key="index"
+    ></card> 
+  </view>
+  <template wx:if="{{subjects.movies.length > 0}}" is="load-more" data="{{isEmpty}}"/>
+</view>

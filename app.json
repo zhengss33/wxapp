@@ -1,10 +1,12 @@
 {
   "pages":[
+    "pages/books/books",
+    "pages/books/detail/detail",
     "pages/movies/movies",
-    "pages/detail/detail",
-    "pages/more/more",
+    "pages/movies/detail/detail",
+    "pages/movies/more/more",
     "pages/celebrity/celebrity",
-    "pages/tv/tv",
+    "pages/music/music",
     "pages/index/index",
     "pages/logs/logs"
   ],
@@ -30,10 +32,10 @@
         "selectedIconPath": "/images/music_active.png"
       },
       {
-        "pagePath": "pages/tv/tv",
-        "text": "电视剧",
-        "iconPath": "/images/tv.png",
-        "selectedIconPath": "/images/tv_active.png"
+        "pagePath": "pages/books/books",
+        "text": "读书",
+        "iconPath": "/images/book.png",
+        "selectedIconPath": "/images/book_active.png"
       }
     ]
   }

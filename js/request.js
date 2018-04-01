@@ -10,7 +10,6 @@ const formatMoviesData = function(data, category) {
       image: movie.images && movie.images.small ,
       title: movie.title,
       average: movie.rating.average,
-      stars: movie.rating.stars,
     });
   });
   movieData = {
@@ -22,7 +21,7 @@ const formatMoviesData = function(data, category) {
     movies: movies,
   };
   return movieData;
-};
+}
 
 const getMoviesData = function({url, start=0, count=20, category}) {
   return new Promise((resolve, reject) => {
@@ -46,7 +45,32 @@ const getMoviesData = function({url, start=0, count=20, category}) {
   });
 }
 
+const getBooksData = function({url, tag, q, start=0, count=20 }) {
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url,
+      data: {
+        tag,
+        q,
+        start,
+        count,
+        fields: 'id,image,rating,title,author,pubdate,publister,sumary'
+      },
+      header: {
+        'Content-Type': 'json',
+      },
+      success: (res) => {
+        resolve(res);
+      },
+      fail: (err) => {
+        reject(res);
+      },
+    })
+  });
+}
+
 module.exports = {
+  getBooksData,
   getMoviesData,
   formatMoviesData,
 };

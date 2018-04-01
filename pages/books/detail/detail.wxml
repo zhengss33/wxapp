@@ -1,0 +1,26 @@
+<!--pages/books/detail/detail.wxml-->
+<wxs src="../../tools.wxs" module="tools" />
+
+<view class="book-detail">
+  <detail-header 
+    image="{{subject.image}}" 
+    title="{{subject.title}}" 
+    average="{{subject.rating.average}}"
+    ratings_count="{{subject.rating.numRaters}}"
+  >
+    <view>作者: {{subject && tools.joinSeparator(subject.author, '')}}</view>
+    <view>出版社: {{subject.publisher}}</view>
+    <view>出版时间: {{subject.pubdate}}</view>
+  </detail-header>
+
+  <view class="detail-content">
+    <summary wx:if="{{subject}}" title="简介" content="{{subject.summary}}"></summary>
+
+    <view class="author">
+      <view class="tip">作者</view>
+      <cell access="{{true}}">
+        <view slot="cell-body">{{subject && tools.clipText(subject.author_intro, 100)}}</view>
+      </cell>
+    </view>
+  </view>
+</view>

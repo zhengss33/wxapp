@@ -6,7 +6,7 @@
     <image class="poster" src="{{image}}"></image>
     <view class="info">
       <text class="name">{{title}}</text>
-      <template is="stars" data="{{ average, stars }}"/>
+      <template is="stars" data="{{ average }}"/>
     </view>
   </view>
 </template>

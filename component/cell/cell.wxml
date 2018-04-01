@@ -1,0 +1,14 @@
+<!--component/cell/cell.wxml-->
+
+<view class="cell-container">
+  <view class="cell-header">
+    <slot name="cell-header"></slot>
+  </view>
+  <view class="cell-body">
+    <slot name="cell-body"></slot>
+  </view>
+  <view class="cell-footer">
+    <slot name="cell-footer"></slot>
+  </view>
+  <view class="arrow" wx:if="{{access}}"></view>
+</view>

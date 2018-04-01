@@ -1,0 +1,25 @@
+@import '/template/stars/stars.wxss';
+
+.card {
+  width: inherit;
+  min-width: 200rpx;
+  overflow: hidden;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 280rpx;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.image image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  font-size: 14px;
+}

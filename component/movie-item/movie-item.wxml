@@ -6,6 +6,6 @@
   <image class="poster" src="{{movie.image}}"></image>
   <view class="info">
     <text class="name">{{movie.title}}</text>
-    <template wx-if="{{movie.stars}}" is="stars" data="{{ average: movie.average, stars: movie.stars }}"/>
+    <template wx-if="{{movie.average}}" is="stars" data="{{ average: movie.average }}"/>
   </view>
 </view>

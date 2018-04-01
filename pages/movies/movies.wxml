@@ -3,16 +3,16 @@
 
 <view class="movie-container page">
   <view class="section">
-    <template is="title" data="{{title: '正在热映', url: '/pages/more/more?category=正在热映'}}"></template>
+    <template is="title" data="{{title: '正在热映', url: '/pages/movies/more/more?category=正在热映'}}"></template>
     <scroll-view scroll-x>
-      <movie-list movies="{{in_theaters.movies}}" isRating="{{true}}"></movie-list>
+      <card-list catchCardTap="onMovieTap" subjects="{{in_theaters.movies}}" isRating="{{true}}"></card-list>
     </scroll-view>
   </view>
 
   <view class="section">
-    <template is="title" data="{{title: '即将上映', url: '/pages/more/more?category=即将上映'}}"></template>
+    <template is="title" data="{{title: '即将上映', url: '/pages/movies/more/more?category=即将上映'}}"></template>
     <scroll-view scroll-x>
-      <movie-list movies="{{coming_soon.movies}}" isRating="{{false}}"></movie-list>
+      <card-list catchCardTap="onMovieTap" subjects="{{coming_soon.movies}}" isRating="{{false}}"></card-list>
     </scroll-view>
   </view>
   

@@ -1,0 +1,6 @@
+  {
+    "navigationBarTitleText": "读书",
+    "usingComponents": {
+      "card-list": "/component/card-list/card-list"
+    }
+  }

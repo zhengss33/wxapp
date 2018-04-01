@@ -1,0 +1,12 @@
+<import src='/template/stars/stars.wxml'/> 
+
+<view class="card card-class" catchtap="onTap" data-mid="{{mid}}">
+  <view class="image">
+    <image src="{{image}}"></image>
+  </view>
+  <view class="title">{{ellipsisTitle}}</view>
+  <block wx:if="{{isRating}}">
+    <template is="stars" data="{{average}}" />
+  </block>
+  <slot></slot>
+</view>

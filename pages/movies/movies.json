@@ -1,7 +1,7 @@
 {
   "navigationBarTitleText": "电影",
   "usingComponents": {
-    "movie-list": "/component/movie-list/movie-list",
+    "card-list": "/component/card-list/card-list",
     "ranking-list": "/component/ranking-list/ranking-list"
   }
 }

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "card": "/component/card/card",
+    "detail-header": "/component/detail-header/detail-header",
+    "summary": "/component/summary/summary"
+  }
+}

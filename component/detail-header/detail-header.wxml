@@ -1,0 +1,27 @@
+<!--component/detail-header/detail-header.wxml-->
+
+<import src="/template/stars/stars.wxml" />
+
+<view class="detail-header">
+  <view class="detail-cover" style="background-image: url({{image}})">
+    <image class="poster" src="{{image}}"></image>
+  </view>
+
+  <view class="detail-content">
+    <view class="desc">
+      <view class="title">{{title}}</view>
+      <view class="info">
+        <slot></slot>
+      </view>
+    </view>
+
+    <view class="rating">
+      豆瓣评分
+      <view class="rating-average">{{average}}</view>
+      <block>
+        <template is="stars" data="{{ average }}" />
+      </block>
+      <view>{{ratings_count}}人</view>
+    </view>
+  </view>
+</view>

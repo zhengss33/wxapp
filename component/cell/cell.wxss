@@ -1,0 +1,18 @@
+/* component/cell/cell.wxss */
+.cell-container {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 5rpx;
+}
+
+.arrow::after {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-width: 2px 2px 0 0;
+  border-color: #c8c8cd;
+  border-style: solid;
+  transform: matrix(.71,.71,-.71,.71,0,0);
+}

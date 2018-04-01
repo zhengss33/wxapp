@@ -1,0 +1,16 @@
+/* component/summary/summary.wxss */
+
+.summary {
+  margin-bottom: 30rpx;
+}
+
+.spread::after {
+  content: '展开';
+  color: #007722;
+}
+
+.tip {
+  color: #999;
+  font-size: 12px;
+  padding: 20rpx 0;
+}

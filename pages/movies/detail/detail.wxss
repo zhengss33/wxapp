@@ -1,0 +1,31 @@
+/* pages/movies/detail/detail.wxss */
+@import '/template/stars/stars.wxss';
+
+.movie-detail {
+  background: #fafbfc;
+}
+
+
+.detail-body {
+  padding: 30rpx;
+}
+
+.cats {
+  margin-bottom: 30rpx;
+}
+
+.card-wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-left: -20rpx; 
+}
+
+.card {
+  margin-left: 20rpx;
+  color: #999;
+}
+
+.photo {
+  width: 440rpx;
+  height: 360rpx;
+}

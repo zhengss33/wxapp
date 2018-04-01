@@ -32,14 +32,14 @@ Component({
     onMoreTap(event) {
       let title = event.target.dataset.title;
       wx.navigateTo({
-        url: `/pages/more/more?category=${title}`,
+        url: `/pages/movies/more/more?category=${title}`,
      });
     },
 
     onMovieTap(event) {
       let mid = event.detail.mid;
       wx.navigateTo({
-        url: `/pages/detail/detail?id=${mid}`,
+        url: `/pages/movies/detail/detail?id=${mid}`,
       });
     }
   }

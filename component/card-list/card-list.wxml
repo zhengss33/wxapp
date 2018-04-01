@@ -1,0 +1,14 @@
+<!--component/card-list/card-list.wxml-->
+<view class="card-list">
+  <card 
+    wx:for="{{subjects}}"
+    wx:key="{{item.id}}"
+    image="{{item.image}}"
+    title="{{item.title}}"
+    mid="{{item.id}}"
+    average="{{item.average}}"
+    isRating="{{isRating}}"
+    catchMovieTap="onMovieTap"
+    class="card-item"
+  ></card>
+</view>

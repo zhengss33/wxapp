@@ -1,9 +1,9 @@
 <wxs module="convert">
-var toStarsArr = function(stars) {
-  var num = stars.toString().substring(0,1);
+var toStarsArr = function(average) {
+  var num = Math.round(average / 2);
   var arr = [];
-  for(var i = 1; i <= 5; i++) {
-    if (i <= num) {
+  for(var i = 0; i < 5; i++) {
+    if (i < num) {
       arr.push(1);
     } else {
       arr.push(0);
@@ -17,7 +17,7 @@ module.exports.toStarsArr = toStarsArr;
 
 <template name="stars">
   <view class="stars-container">
-    <image wx:for="{{convert.toStarsArr(stars)}}" wx:key="{{index}}" class="rating-stars {{item? 'rating-stars-full' : 'rating-stars-gray'}}"></image> 
+    <image wx:for="{{convert.toStarsArr(average)}}" wx:key="{{index}}" class="rating-stars {{item? 'rating-stars-full' : 'rating-stars-gray'}}"></image> 
     <text wx:if="{{average}}" class="average">{{average}}</text>
   </view>
 </template>

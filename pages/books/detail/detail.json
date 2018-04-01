@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "detail-header": "/component/detail-header/detail-header",
+    "summary": "/component/summary/summary",
+    "cell": "/component/cell/cell"
+  }
+}

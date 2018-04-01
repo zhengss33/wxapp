@@ -1,0 +1,71 @@
+<!--pages/movies/detail/detail.wxml-->
+<wxs module="format">
+  var joinSeparator = function(arr, separator) {
+    return arr.join(separator);
+  }
+
+  var concatArr = function(arr1, arr2) {
+    return arr1.concat(arr2);
+  } 
+
+  module.exports.joinSeparator = joinSeparator;
+  module.exports.concatArr = concatArr;
+</wxs>
+
+ <view class="movie-detail">
+  <detail-header
+    image="{{subject.images.small}}"
+    title="{{subject.title}}"
+    average="{{subject.rating.average}}"
+    ratings_count="{{subject.ratings_count}}"
+  >
+    <view wx:if="{{subject}}">
+      {{subject.year}} / 
+      {{ format.joinSeparator(subject.countries, ' / ')}} /
+      {{ format.joinSeparator(subject.genres, ' / ')}}
+    </view>
+    <view>原名: {{subject.original_title}}</view>
+    <view>上映时间: {{subject.mainland_pubdate}}(中国大陆)</view>
+    <view>片长: {{subject.durations[0]}}</view>
+  </detail-header>
+
+  <view class="detail-body">
+    <summary wx:if="{{subject}}" title="剧情简介" content="{{subject.summary}}"></summary>
+
+    <view class="cats">
+      <view class="tip">影人</view>
+      <scroll-view scroll-x>
+        <view class="card-wrap" wx:if="{{subject}}">
+          <card
+            class="card"
+            wx:for="{{format.concatArr(subject.directors, subject.casts)}}" 
+            wx:key="{{item.id}}"
+            mid="{{item.id}}"
+            image="{{item.avatars.small}}"
+            title="{{item.name}}"
+            catchMovieTap="onCatsTap"
+            isRating="{{false}}"
+          >
+          </card>
+        </view>
+      </scroll-view>
+    </view>
+
+    <view class="photos">
+      <view class="tip">剧照</view>
+      <scroll-view scroll-x>
+        <view class="card-wrap">
+          <card
+            class="card photo"
+            wx:for="{{subject.photos}}" 
+            wx:key="{{item.id}}"
+            mid="{{item.id}}"
+            image="{{item.image}}"
+            catchMovieTap="onPhotosTap"
+          >
+          </card>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view> 

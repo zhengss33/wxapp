@@ -1,0 +1,16 @@
+var clipText = function(text, len) {
+  if (text.length > len) {
+    return text.substring(0, len) + '...';
+  } else {
+    return text;
+  }
+}
+
+var joinSeparator = function (arr, separator) {
+  return arr.join(separator);
+}
+
+module.exports = {
+  clipText: clipText,
+  joinSeparator: joinSeparator
+}
