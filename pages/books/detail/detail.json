@@ -2,6 +2,7 @@
   "usingComponents": {
     "detail-header": "/component/detail-header/detail-header",
     "summary": "/component/summary/summary",
-    "cell": "/component/cell/cell"
+    "cell": "/component/cell/cell",
+    "dialog": "/component/dialog/dialog"
   }
 }

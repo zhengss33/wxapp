@@ -3,10 +3,12 @@
 
 <view class="dialog-wrapper {{center ? 'dialog-center': ''}}" wx:if="{{visible}}">
   <view class="dialog {{fullscreen ? 'fullscreen' : ''}}" style="width: {{width}}">
-    <slot name="dialog-header"></slot>
+    <view class="dialog-header">
+      <slot name="dialog-header"></slot>
+      <image catchtap="closeModal" wx:if="{{showClose}}" class="close-img" src="/images/close.png"></image>
+    </view>
     <slot></slot>
     <slot name="dialog-footer"></slot>
-    kkkk
   </view>
-   <view class="modal"></view> 
+   <view wx:if="{{modal}}" class="modal" catchtap="onModalTap"></view> 
 </view>

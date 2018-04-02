@@ -1,3 +1,5 @@
 <!--pages/music/music.wxml-->
 
-
+<view>
+  <dialog></dialog>
+</view>

@@ -12,7 +12,7 @@ Component({
       type: Boolean,
       value: true,
       observer: function(newVal, oldVal) {
-        console.log(this)
+        console.log(this);
       },
     },
     width: {
@@ -45,12 +45,21 @@ Component({
    * 组件的初始数据
    */
   data: {
-    isVisible: false,
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
+    onModalTap() {
+      if (this.properties.closeOnClickModel) {
+        this.closeModal();
+      }
+    },
+    closeModal() {
+      this.setData({
+        visible: false,
+      });
+    },
   }
 })

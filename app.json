@@ -26,7 +26,7 @@
         "selectedIconPath": "/images/movie_active.png"
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/music/music",
         "text": "音乐",
         "iconPath": "/images/music.png",
         "selectedIconPath": "/images/music_active.png"

@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    visibleDialog: false,
   },
 
   /**
@@ -46,4 +46,10 @@ Page({
       }
     });
   },
+
+  showDialog() {
+    this.setData({
+      visibleDialog: true,
+    });
+  }
 })

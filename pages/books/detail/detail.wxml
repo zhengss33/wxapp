@@ -16,7 +16,7 @@
   <view class="detail-content">
     <summary wx:if="{{subject}}" title="简介" content="{{subject.summary}}"></summary>
 
-    <view class="author">
+    <view class="author" catchtap="showDialog">
       <view class="tip">作者</view>
       <cell access="{{true}}">
         <view slot="cell-body">{{subject && tools.clipText(subject.author_intro, 100)}}</view>
