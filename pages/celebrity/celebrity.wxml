@@ -1,2 +1,33 @@
 <!--pages/celebrity/celebrity.wxml-->
-<text>pages/celebrity/celebrity.wxml</text>
+<wxs src="../tools.wxs" module="tools" />
+<import src="/template/title/title.wxml" />
+
+<view class="celebrity-container">
+    <view>
+      <view class="name">{{name}}</view>
+      <view class="name_en">{{name_en}}</view>
+    </view>
+  <view class="celebrity-info">
+    <view class="avatar"><image src="{{avatars.small}}"></image></view>
+
+    <view class="info-list">
+      <view>性别: {{gender}}</view>
+      <view>星座: {{constellation}}</view>
+      <view>出生日期: {{birthday}}</view>
+      <view>出身地: {{born_place}}</view>
+      <view>{{aka && tools.joinSeparator(aka)}}</view>
+      <view>{{aka_en && tools.joinSeparator(aka_en)}}</view>
+    </view>
+  </view>
+  <view class="celebrity-intro">
+    <view class="tip">简介</view>
+    <view class="content">{{summary}}</view>
+  </view>
+
+  <view class="section">
+    <template is="title" data="{{title: '影视'}}"></template>
+    <scroll-view scroll-x>
+      <card-list catchCardTap="onMovieTap" subjects="{{workList}}" isRating="{{true}}"></card-list>
+    </scroll-view>
+  </view>
+</view>

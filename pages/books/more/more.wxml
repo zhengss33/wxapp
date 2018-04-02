@@ -1,0 +1,25 @@
+<!--pages/books/more/more.wxml-->
+<import src="/template/stars/stars.wxml" />
+<import src="/template/load-more/load-more-template.wxml" />
+<wxs src="../../tools.wxs" module="tools" />
+
+<view class="more-books">
+  <view 
+    wx:for="{{books}}" 
+    wx:key="{{item.id}}" 
+    data-mid="{{item.id}}"
+    catchtap="onBookTap"
+    class="book-card border-bt"
+  >
+    <image class="card" src="{{item.image}}"></image>
+    <view class="info">
+      <view class="title">{{item.title}}</view>
+      <template is="stars" data="{{average: item.rating.average}}"/>
+      <view>{{tools.joinSeparator(item.author)}}</view>
+      <view wx:if="{{item.summary}}" class="intro bg-gray">
+        {{tools.clipText(item.summary, 50)}}
+      </view>
+    </view>
+  </view>
+  <template wx:if="{{books.length > 0}}" is="load-more" data="{{isEmpty}}"/>
+</view>

@@ -25,7 +25,6 @@
   margin-left: 25rpx;
   flex: 1;
   height: 100%;
-  border-bottom: 1rpx solid #e7e7eb;
 }
 
 .name {

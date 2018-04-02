@@ -4,7 +4,7 @@
 <view class="movie-card" data-mid="{{movie.id}}" catchtap="onTap">
   <view class="order">{{order}}</view>
   <image class="poster" src="{{movie.image}}"></image>
-  <view class="info">
+  <view class="info border-bt">
     <text class="name">{{movie.title}}</text>
     <template wx-if="{{movie.average}}" is="stars" data="{{ average: movie.average }}"/>
   </view>

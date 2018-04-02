@@ -23,4 +23,8 @@
       </cell>
     </view>
   </view>
+  <dialog visible="{{visibleDialog}}" width="80%">
+    <view slot="dialog-header" class="tip">作者简介</view>
+    <view>{{subject.author_intro}}</view>
+  </dialog>
 </view>

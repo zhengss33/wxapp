@@ -23,6 +23,8 @@ const SEARCH_BOOK_URL = `${BASE_URL}/v2/book/search`;
 
 const BOOK_URL = `${BASE_URL}/v2/book/`;
 
+const CELEBRITY_URL = `${BASE_URL}/v2/movie/celebrity/`;
+
 module.exports = {
   BASE_URL,
   IN_THEATERS_URL,
@@ -39,4 +41,5 @@ module.exports = {
   MOVIE_URL,
   SEARCH_BOOK_URL,
   BOOK_URL,
+  CELEBRITY_URL,
 };

@@ -1,1 +1,5 @@
-{}
+{
+  "usingComponents": {
+    "card-list": "/component/card-list/card-list"
+  }
+}

@@ -2,7 +2,6 @@
 @import '/template/stars/stars.wxss';
 
 .movie-detail {
-  background: #fafbfc;
 }
 
 

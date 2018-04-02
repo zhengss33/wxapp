@@ -1,10 +1,11 @@
 {
   "pages":[
-    "pages/books/books",
-    "pages/books/detail/detail",
     "pages/movies/movies",
     "pages/movies/detail/detail",
     "pages/movies/more/more",
+    "pages/books/books",
+    "pages/books/detail/detail",
+    "pages/books/more/more",
     "pages/celebrity/celebrity",
     "pages/music/music",
     "pages/index/index",

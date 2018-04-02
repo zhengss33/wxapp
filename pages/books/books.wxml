@@ -3,28 +3,31 @@
 
 <view class="books-container page">
   <view class="section">
-    <template is="title" data="{{title: '中国文学', url: '/pages/more/more?category=正在热映'}}"></template>
+    <template 
+      wx:if="{{chinese}}" 
+      is="title"
+      data="{{title: '中国文学', url: '/pages/books/more/more?tag=' + chinese.tag}}"></template>
     <scroll-view scroll-x>
       <card-list catchCardTap="onBookTap" subjects="{{chinese.books}}" isRating="{{true}}"></card-list> 
     </scroll-view> 
   </view>
 
   <view class="section">
-    <template is="title" data="{{title: '外国文学', url: '/pages/more/more?category=即将上映'}}"></template>
+    <template is="title" data="{{title: '外国文学', url: '/pages/books/more/more?tag=' + foreign.tag}}"></template>
      <scroll-view scroll-x>
       <card-list catchCardTap="onBookTap" subjects="{{foreign.books}}" isRating="{{true}}"></card-list>
     </scroll-view> 
   </view>
 
   <view class="section">
-    <template is="title" data="{{title: '豆瓣图书250', url: '/pages/more/more?category=即将上映'}}"></template>
+    <template is="title" data="{{title: '豆瓣图书250', url: '/pages/books/more/more?tag=' + top.tag}}"></template>
      <scroll-view scroll-x>
       <card-list catchCardTap="onBookTap" subjects="{{top.books}}" isRating="{{true}}"></card-list>
     </scroll-view> 
   </view>
 
     <view class="section">
-      <template is="title" data="{{title: '科技', url: '/pages/more/more?category=即将上映'}}"></template>
+      <template is="title" data="{{title: '科技', url: '/pages/books/more/more?tag=' + science.tag}}"></template>
       <scroll-view scroll-x>
         <card-list catchCardTap="onBookTap" subjects="{{science.books}}" isRating="{{true}}"></card-list>
       </scroll-view> 

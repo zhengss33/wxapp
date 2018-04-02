@@ -12,7 +12,6 @@ Component({
       type: Boolean,
       value: true,
       observer: function(newVal, oldVal) {
-        console.log(this);
       },
     },
     width: {

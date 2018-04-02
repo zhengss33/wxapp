@@ -54,7 +54,7 @@ const getBooksData = function({url, tag, q, start=0, count=20 }) {
         q,
         start,
         count,
-        fields: 'id,image,rating,title,author,pubdate,publister,sumary'
+        fields: 'id,image,rating,title,author,pubdate,publisher,summary'
       },
       header: {
         'Content-Type': 'json',

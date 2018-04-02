@@ -1,0 +1,37 @@
+/* pages/books/more/more.wxss */
+@import '/template/stars/stars.wxss';
+@import '/template/load-more/load-more-template.wxss';
+
+.more-books {
+  padding: 30rpx;
+}
+
+.book-card {
+  display: flex;
+  padding: 20rpx 0;
+  margin-bottom: 20rpx;
+}
+
+.card {
+  width: 200rpx;
+  height: 280rpx;
+}
+
+.info {
+  flex: 1;
+  margin-left: 20rpx;
+  font-size: 12px;
+  color: #999;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+.intro {
+  margin-top: 20rpx;
+  padding: 10rpx;
+  border-radius: 3px;
+}

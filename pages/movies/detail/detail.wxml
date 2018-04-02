@@ -12,7 +12,7 @@
   module.exports.concatArr = concatArr;
 </wxs>
 
- <view class="movie-detail">
+ <view class="movie-detail bg-gray">
   <detail-header
     image="{{subject.images.small}}"
     title="{{subject.title}}"
