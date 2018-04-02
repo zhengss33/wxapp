@@ -9,6 +9,7 @@ Page({
    */
   data: {
     isSpread: false,
+    previewImages: [],
   },
 
   /**
@@ -33,10 +34,13 @@ Page({
       url: MOVIE_URL + this.data.id,
       header: { 'Content-Type': 'json' },
       success: (res) => {
+        let previews = res.data.photos.map((item) => item.image);
+
         this.clipText(res.data.summary, 150);
 
         this.setData({
           subject: res.data,
+          previewImages: previews,
         });
         
         wx.setNavigationBarTitle({
@@ -58,7 +62,9 @@ Page({
   },
 
   onPhotosTap(event) {
-    console.log(event.detail.mid);
+    wx.previewImage({
+      urls: this.data.previewImages,
+    });
   },
 
   clipText(text, count) {

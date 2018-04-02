@@ -94,5 +94,11 @@ Page({
     wx.navigateTo({
       url: `/pages/books/detail/detail?id=${event.detail.mid}`,
     });
+  },
+
+  searchBooks(event) {
+    wx.navigateTo({
+      url: `/pages/books/more/more?query=${event.detail.query}`,
+    });
   }
 })

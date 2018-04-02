@@ -14,6 +14,7 @@ const {
   WEEKLY_URL,
   NEW_MOVIE,
   NEW_MOVIE_URL,
+  SEARCH_MOVIE_URL,
 } = config;
 
 Page({
@@ -34,7 +35,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let category = options.category;
+    let category = options.category || '搜索结果';
+    let query = options.q || '';
+
+    this.setData({ category, query });
 
     wx.setNavigationBarTitle({
       title: category,
@@ -44,7 +48,6 @@ Page({
       title: '正在加载...',
     });
 
-    this.setData({ category });
     this.setRequestUrl();
     this.getMoviesData();
   },
@@ -56,13 +59,15 @@ Page({
   },
 
   getMoviesData() {
-    let { requestUrl, start, count } = this.data;
+    let { requestUrl, start, count, query } = this.data;
 
     request.getMoviesData({
       url: requestUrl,
+      q: query,
       start,
       count,
     }).then((res) => {
+      console.log(res);
       let moviesSouce = this.data.subjects ? this.data.subjects.movies : [];
       if (moviesSouce.length > 0) {
         let movies = res.movies;
@@ -112,7 +117,10 @@ Page({
       case NEW_MOVIE:
         url = NEW_MOVIE_URL;
         break;
-
+      
+      case '搜索结果':
+        url = SEARCH_MOVIE_URL;
+        break;
     }
     this.setData({
       requestUrl: url,

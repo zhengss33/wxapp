@@ -1,0 +1,35 @@
+/* component/search/search.wxss */
+
+.search-container {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  background-color: #396;
+}
+
+.search-container::after {
+  content: "";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+
+.search-wrap {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  padding: 10rpx;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0 3px;
+}
+
+.cancel-btn {
+  margin-left: 10rpx;
+}
+

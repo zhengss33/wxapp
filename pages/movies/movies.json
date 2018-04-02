@@ -1,7 +1,10 @@
 {
   "navigationBarTitleText": "电影",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#396",
   "usingComponents": {
     "card-list": "/component/card-list/card-list",
-    "ranking-list": "/component/ranking-list/ranking-list"
+    "ranking-list": "/component/ranking-list/ranking-list",
+    "search": "/component/search/search"
   }
 }

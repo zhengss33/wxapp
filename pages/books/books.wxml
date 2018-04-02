@@ -1,30 +1,32 @@
 <!--pages/books/books.wxml-->
 <import src="/template/title/title.wxml" />
 
-<view class="books-container page">
-  <view class="section">
-    <template 
-      wx:if="{{chinese}}" 
-      is="title"
-      data="{{title: '中国文学', url: '/pages/books/more/more?tag=' + chinese.tag}}"></template>
-    <scroll-view scroll-x>
-      <card-list catchCardTap="onBookTap" subjects="{{chinese.books}}" isRating="{{true}}"></card-list> 
-    </scroll-view> 
-  </view>
+<view class="books-container">
+  <search placeholde="搜索图书" bindsearch="searchBooks"></search>
+  <view class="page">
+    <view class="section">
+      <template 
+        wx:if="{{chinese}}" 
+        is="title"
+        data="{{title: '中国文学', url: '/pages/books/more/more?tag=' + chinese.tag}}"></template>
+      <scroll-view scroll-x>
+        <card-list catchCardTap="onBookTap" subjects="{{chinese.books}}" isRating="{{true}}"></card-list> 
+      </scroll-view> 
+    </view>
 
-  <view class="section">
-    <template is="title" data="{{title: '外国文学', url: '/pages/books/more/more?tag=' + foreign.tag}}"></template>
-     <scroll-view scroll-x>
-      <card-list catchCardTap="onBookTap" subjects="{{foreign.books}}" isRating="{{true}}"></card-list>
-    </scroll-view> 
-  </view>
+    <view class="section">
+      <template is="title" data="{{title: '外国文学', url: '/pages/books/more/more?tag=' + foreign.tag}}"></template>
+      <scroll-view scroll-x>
+        <card-list catchCardTap="onBookTap" subjects="{{foreign.books}}" isRating="{{true}}"></card-list>
+      </scroll-view> 
+    </view>
 
-  <view class="section">
-    <template is="title" data="{{title: '豆瓣图书250', url: '/pages/books/more/more?tag=' + top.tag}}"></template>
-     <scroll-view scroll-x>
-      <card-list catchCardTap="onBookTap" subjects="{{top.books}}" isRating="{{true}}"></card-list>
-    </scroll-view> 
-  </view>
+    <view class="section">
+      <template is="title" data="{{title: '豆瓣图书250', url: '/pages/books/more/more?tag=' + top.tag}}"></template>
+      <scroll-view scroll-x>
+        <card-list catchCardTap="onBookTap" subjects="{{top.books}}" isRating="{{true}}"></card-list>
+      </scroll-view> 
+    </view>
 
     <view class="section">
       <template is="title" data="{{title: '科技', url: '/pages/books/more/more?tag=' + science.tag}}"></template>
@@ -32,4 +34,5 @@
         <card-list catchCardTap="onBookTap" subjects="{{science.books}}" isRating="{{true}}"></card-list>
       </scroll-view> 
     </view>
+  </view>
 </view>

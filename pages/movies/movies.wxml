@@ -1,8 +1,10 @@
 <!--pages/movies/movies.wxml-->
 <import src="/template/title/title.wxml" />
 
-<view class="movie-container page">
-  <view class="section">
+<view class="movie-container">
+  <search placeholde="搜索电影" bindsearch="searchMovies"></search>
+  <view class="page">
+    <view class="section">
     <template is="title" data="{{title: '正在热映', url: '/pages/movies/more/more?category=正在热映'}}"></template>
     <scroll-view scroll-x>
       <card-list catchCardTap="onMovieTap" subjects="{{in_theaters.movies}}" isRating="{{true}}"></card-list>
@@ -17,4 +19,5 @@
   </view>
   
   <ranking-list class="section" rankingList="{{[weekly, new_movies, top250]}}"></ranking-list>
+  </view>
 </view>

@@ -13,6 +13,7 @@
 }
 
 .card {
+  flex-basis: 200rpx;
   width: 200rpx;
   height: 280rpx;
 }
@@ -34,4 +35,5 @@
   margin-top: 20rpx;
   padding: 10rpx;
   border-radius: 3px;
+  word-break: break-all;
 }

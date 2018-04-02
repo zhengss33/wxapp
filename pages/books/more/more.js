@@ -10,6 +10,8 @@ Page({
   data: {
     books: [],
     count: 20,
+    tag: '',
+    query: '',
     start: 0,
     isEmpty: false,
   },
@@ -18,12 +20,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let tag = options.tag || '';
+    let query = options.query || '';
+
     this.setData({
-      tag: options.tag,
+      tag,
+      query,
     });
 
     wx.setNavigationBarTitle({
-      title: options.tag,
+      title: tag || '搜索结果',
     });
 
     wx.showLoading({
@@ -39,19 +45,18 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    console.log('bottom');
     if (!this.data.isEmpty) {
-      console.log('get');
       this.getBooksData();
     }
   },
 
   getBooksData() {
-    const { tag, count, start } = this.data;
+    const { tag, count, start, query } = this.data;
 
     return request.getBooksData({
       url: SEARCH_BOOK_URL,
       tag: tag,
+      q: query,
       start: start,
       count: count,
     }).then((res) => {

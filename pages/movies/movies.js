@@ -79,5 +79,13 @@ Page({
     wx.navigateTo({
       url: `/pages/movies/detail/detail?id=${event.detail.mid}`,
     });
+  },
+
+  searchMovies(event) {
+    let query = event.detail.query;
+    
+    wx.navigateTo({
+      url: `/pages/movies/more/more?q=${query}`,
+    });
   }
 });

@@ -21,6 +21,12 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    previewImage(event) {
+      let src = event.currentTarget.dataset.src;
 
+      wx.previewImage({
+        urls: [src],
+      });
+    },
   }
 })

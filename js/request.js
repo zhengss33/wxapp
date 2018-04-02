@@ -23,13 +23,14 @@ const formatMoviesData = function(data, category) {
   return movieData;
 }
 
-const getMoviesData = function({url, start=0, count=20, category}) {
+const getMoviesData = function({url, start=0, count=20, category, q=''}) {
   return new Promise((resolve, reject) => {
     wx.request({
       url: url,
       data: {
         start,
         count,
+        q,
       },
       header: {
         "Content-Type": "json",
@@ -45,7 +46,7 @@ const getMoviesData = function({url, start=0, count=20, category}) {
   });
 }
 
-const getBooksData = function({url, tag, q, start=0, count=20 }) {
+const getBooksData = function({url, tag, q='', start=0, count=20 }) {
   return new Promise((resolve, reject) => {
     wx.request({
       url,

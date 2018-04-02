@@ -1,0 +1,18 @@
+<!--component/search/search.wxml-->
+
+<view class="search-container">
+   <view class="search-wrap">
+    <icon class="search-icon" type="search" size="{{15}}"></icon>  
+    <input 
+      class="search-input"
+      value="{{value}}"
+      placeholder="{{placeholde}}" 
+      confirm-type="search"
+      bindinput="{{onInput}}"
+      bindfocus="onFocus"
+      bindblur="onBlur"
+      bindconfirm="onConFirm"
+    ></input>
+  </view>
+  <icon hidden="{{isHideCancel}}" catchtap="cancel" type="cancel" class="cancel-btn" color="#fff"></icon> 
+</view>

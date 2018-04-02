@@ -1,6 +1,9 @@
   {
     "navigationBarTitleText": "读书",
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#396",
     "usingComponents": {
-      "card-list": "/component/card-list/card-list"
+      "card-list": "/component/card-list/card-list",
+      "search": "/component/search/search"
     }
   }

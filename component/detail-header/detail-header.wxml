@@ -4,7 +4,7 @@
 
 <view class="detail-header">
   <view class="detail-cover" style="background-image: url({{image}})">
-    <image class="poster" src="{{image}}"></image>
+    <image class="poster" catchtap="previewImage" data-src="{{image}}" src="{{image}}" lazy-load="{{true}}"></image>
   </view>
 
   <view class="detail-content">

@@ -18,6 +18,14 @@ page {
   padding: 0 30rpx;
 }
 
+.page::after {
+  content: "";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+
 text {
   font-family: MicroSoft Yahei;
   color: #333;
