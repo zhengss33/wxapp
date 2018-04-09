@@ -27,12 +27,6 @@
         "selectedIconPath": "/images/movie_active.png"
       },
       {
-        "pagePath": "pages/music/music",
-        "text": "音乐",
-        "iconPath": "/images/music.png",
-        "selectedIconPath": "/images/music_active.png"
-      },
-      {
         "pagePath": "pages/books/books",
         "text": "读书",
         "iconPath": "/images/book.png",

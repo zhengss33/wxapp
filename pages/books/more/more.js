@@ -37,6 +37,7 @@ Page({
     });
 
     this.getBooksData().then(() => {
+      console.log('hiden');
       wx.hideLoading();
     });
   },
@@ -63,7 +64,6 @@ Page({
       res.data.books = this.data.books.concat(res.data.books);
       this.setData(res.data);
       this.checkIsEmpty();
-      Promise.resolve();
     });
   },
 

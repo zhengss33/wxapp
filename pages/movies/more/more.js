@@ -49,7 +49,9 @@ Page({
     });
 
     this.setRequestUrl();
-    this.getMoviesData();
+    this.getMoviesData().then(() => {
+      wx.hideLoading();
+    });
   },
 
   onReachBottom: function() {
@@ -61,7 +63,7 @@ Page({
   getMoviesData() {
     let { requestUrl, start, count, query } = this.data;
 
-    request.getMoviesData({
+    return request.getMoviesData({
       url: requestUrl,
       q: query,
       start,
@@ -82,7 +84,6 @@ Page({
 
       this.checkIsEmpty();
       this.getFillBoxs();
-      wx.hideLoading();
     });
   },
 
